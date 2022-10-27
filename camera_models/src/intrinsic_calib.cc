@@ -267,6 +267,7 @@ main( int argc, char** argv )
 
         for ( size_t i = 0; i < cbImages.size( ); ++i )
         {
+            // CV_AA to cv::LINE_AA(opencv 4)
             cv::putText( cbImages.at( i ),
                          cbImageFilenames.at( i ),
                          cv::Point( 10, 20 ),
@@ -274,7 +275,7 @@ main( int argc, char** argv )
                          0.5,
                          cv::Scalar( 255, 255, 255 ),
                          1,
-                         CV_AA );
+                         cv::LINE_AA );
             cv::imshow( "Image", cbImages.at( i ) );
             cv::waitKey( 0 );
         }
